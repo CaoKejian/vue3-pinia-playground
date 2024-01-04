@@ -25,22 +25,23 @@ export default defineStore('todoList', {
     removeTodo (id) {
       this.todos = this.todos.filter( todo => todo.id !== id )
     },
-    getters: {
-      finishedTodos (state) {
-        return state.todos.filter( todo => todo.isFinished )
-      },
-      unfinishedTodos (state) {
-        return state.todos.filter( todo => !todo.isFinished )
-      },
-      filteredTodos (state) {
-        switch (this.filter) {
-          case 'finished':
-            return this.finishedTodos
-          case 'unfinished':
-            return this.unfinishedTodos
-          default:
-            return this.todos
-        }
+    
+  },
+  getters: {
+    finishedTodos (state) {
+      return state.todos.filter( todo => todo.isFinished )
+    },
+    unfinishedTodos (state) {
+      return state.todos.filter( todo => !todo.isFinished )
+    },
+    filteredTodos (state) {
+      switch (this.filter) {
+        case 'finished':
+          return this.finishedTodos
+        case 'unfinished':
+          return this.unfinishedTodos
+        default:
+          return this.todos
       }
     }
   }
