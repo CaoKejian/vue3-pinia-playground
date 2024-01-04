@@ -1,10 +1,6 @@
-<script setup lang="js">
-import { useTodoListStore } from './store/index'
-console.log(useTodoListStore())
-</script>
-
 <template>
-  <header>
-    1
-  </header>
+  <todo-list />
 </template>
+<script setup>
+import TodoList from './components/TodoList.vue';
+</script>
