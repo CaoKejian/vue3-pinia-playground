@@ -11,6 +11,7 @@ const inputRef = ref('')
 const todoListStore = useTodoListStore()
 const addTodo = () => {
   todoListStore.addTodo(inputRef.value)
+  inputRef.value = ''
 }
 </script>
 <style lang='less' scoped></style>
